@@ -1,12 +1,24 @@
+import java.util.Scanner;
+
 public class Duke {
     public static void main(String[] args) {
-        String openingMsg = "____________________________________________________________\n"
+        Scanner in = new Scanner(System.in);
+        final String horizontalLine = "____________________________________________________________\n";
+        final String OPENING_MSG = horizontalLine
                 + "Hello! I'm Duke\n"
                 + "What can I do for you?\n"
-                + "____________________________________________________________\n";
-        String closingMsg = " Bye. Hope to see you again soon!\n"
-                + "____________________________________________________________\n";
-        System.out.println(openingMsg);
-        System.out.println(closingMsg);
+                + horizontalLine;
+        final String CLOSING_MSG = " Bye. Hope to see you again soon!\n"
+                + horizontalLine;
+        System.out.println(OPENING_MSG);
+
+        while (true) {
+            String userCommand = in.next();
+            if (userCommand.equals("bye")) {
+                break;
+            }
+            System.out.println(horizontalLine + userCommand + System.lineSeparator() + horizontalLine);
+        }
+        System.out.println(CLOSING_MSG);
     }
 }
